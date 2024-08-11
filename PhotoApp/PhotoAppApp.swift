@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PhotoAppApp: App {
+    @StateObject private var appState = AppState()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView()
+                .environmentObject(appState)
         }
     }
 }
